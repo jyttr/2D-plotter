@@ -28,9 +28,9 @@ for i in range(rows):
             image[i, j, 1] = 0  # Set the green channel to minimum
             image[i, j, 2] = 0  # Set the blue channel to minimum
 
-#Insert values into Numpy array
-points=np.array([listx,listy])
-
+#insert values to numpy and then change the give an image with reduced white spots
+kernel = np.ones((3, 3), np.uint8)
+image = cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)
 # Resize the image to the new dimensions for display 
 
 new_height=300
