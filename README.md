@@ -1,7 +1,7 @@
 # 2D-plotter
 To create a 2D plotting machine which can generate a binary image on a paper using a stylus.
 
-# Objectives
+## Objectives
 
 - [ ]  extract coordinates of pixels from a binary image
 - [ ]  map out the points to real-life-size paper dimensions (in cm)
