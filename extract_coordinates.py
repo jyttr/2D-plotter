@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 # Load an image using OpenCV
+import csv
 image = cv2.imread("D:\\CET\\Extrs\\Photos\\Cat1.jpg")
 
 listx=[]
@@ -36,6 +37,12 @@ image = cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)
 new_height=300
 new_width=300
 resized_image = cv2.resize(image, (new_width, new_height))
+
+#create a new csv file and store the values of the dimnesions of the image to the file
+with open("dimensions.csv", "w") as csvfile:
+    csvwriter = csv.writer(csvfile)
+    csvwriter.writerow([rows, cols]) #write the dimensions to a csv file
+csvfile.close()
 
 cv2.imshow('Resized Image', resized_image)
 cv2.waitKey(0)
